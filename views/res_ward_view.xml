@@ -16,7 +16,7 @@
     </record>
 
     <record id="action_ward" model="ir.actions.act_window">
-        <field name="name">Wards</field>
+        <field name="name">Phường/Xã</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">res.ward</field>
         <field name="help">Display Wards list</field>

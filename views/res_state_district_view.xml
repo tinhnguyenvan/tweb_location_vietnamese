@@ -15,7 +15,7 @@
     </record>
 
     <record id="action_district" model="ir.actions.act_window">
-        <field name="name">Districts</field>
+        <field name="name">Quận/Huyện</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">res.district</field>
         <field name="help">Display Districts list</field>

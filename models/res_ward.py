@@ -12,7 +12,6 @@ class ResWard(models.Model):
     state_id = fields.Many2one('res.country.state', 'State', domain="[('country_id', '=', country_id)]")
     district_id = fields.Many2one('res.district', 'District', domain="[('state_id', '=', state_id)]")
     ghn_ward_id = fields.Char("GHN Ward Code", help='Mã phường/xã theo Giao hàng Nhanh')
-    acu_cd = fields.Char(string='Acu code', help='Mã phường/xã theo Acumatica')
 
     def create_ward_data(self):
         all_district = self.env['res.district'].sudo().search([('source_id', '>', 0)])
@@ -29,10 +28,7 @@ class ResWard(models.Model):
             req.raise_for_status()
             content = req.json()    
             data = content['data']
-            print(request_url)
-            print(i)
             if data is None:
-                print('Error --------')
                 continue
             
             for rec in data:
@@ -46,3 +42,5 @@ class ResWard(models.Model):
                     vals['ghn_ward_id'] = rec['WardCode']
                     i += 1
                     self.env['res.ward'].sudo().create(vals)
+                    
+        print('DONE SYNC WARD DATA')
