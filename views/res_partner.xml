@@ -6,10 +6,8 @@
         <field name="inherit_id" ref="base.view_partner_form" />
         <field name="arch" type="xml">
             <xpath expr="//field[@name='state_id']" position="after">
-                <field name="district_id" required="True" placeholder="Quận/huyện..."
-                    class="o_address_street" />
-                <field name="ward_id" required="True" placeholder="Phường/xã..."
-                    class="o_address_street" />
+                <field name="district_id" placeholder="Quận/huyện..." class="o_address_street" />
+                <field name="ward_id" placeholder="Phường/xã..." class="o_address_street" />
             </xpath>
 
             <xpath expr="//field[@name='city']" position="attributes">
