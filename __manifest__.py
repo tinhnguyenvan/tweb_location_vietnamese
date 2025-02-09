@@ -4,9 +4,9 @@
     'author': "tinh.nguyenvan",
     'website': "https://tweb.com.vn/?utm_source=odoo_apps",
     'sequence':'10',
-    'category': 'Studio',
+    'category': 'Tools/TWEB',
     'version': '17.0.1.0.1',
-    'depends': ['base', 'contacts'],
+    'depends': ['base','base_setup', 'contacts'],
     'data': [
         'security/ir.model.access.csv',
         'views/res_partner.xml',

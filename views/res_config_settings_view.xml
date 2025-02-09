@@ -1,21 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <!-- sale config settings-->
-        <record id="tweb_res_config_settings_view_form_sale" model="ir.ui.view">
-            <field name="name">res.config.settings.view.form.inherit.sale</field>
+        <record id="tweb_res_config_settings_view_form" model="ir.ui.view">
+            <field name="name">tweb.res.config.settings.view.form.inherit</field>
             <field name="model">res.config.settings</field>
-            <field name="priority" eval="30" />
             <field name="inherit_id" ref="base.res_config_settings_view_form" />
             <field name="arch" type="xml">
-                <xpath expr="//block[@name='sale_shipping_setting_container']"
-                    position="inside">
-                    <div class="col-12 col-lg-6 o_setting_box">
-                        <div class="o_setting_right_pane">
-                            <label for="ghn_token" style="margin-right: 10px;"/>
+                <xpath expr="//div[@id='contacts_settings']" position="inside">
+                    <block>
+                        <setting>
                             <field name="ghn_token" />
-                        </div>
-                    </div>
+                        </setting>
+                    </block>
                 </xpath>
             </field>
         </record>
